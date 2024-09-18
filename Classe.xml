@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+	<template name="cl" invoke="manual">
+		<description>
+		  Tamplate para criar classes
+		</description>
+		<author>
+		RTrevisan20
+		</author>
+		<code language="Delphi">
+<![CDATA[
+interface
+
+uses
+	System.SysUtils;
+
+type
+  TminhaClasse = class
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+  end;
+
+implementation
+
+constructor TminhaClasse.Create;
+begin
+
+end;
+
+destructor TminhaClasse.Destroy;
+begin
+
+  inherited;
+end;
+
+end.
+]]>
+		</code>
+	</template>
+</codetemplate>

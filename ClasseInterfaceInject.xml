@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+	<template name="clInterfaceInject" invoke="manual">
+		<description>
+      Tamplate para criação de interface com injeção de dependências
+		</description>
+		<author>
+		RTrevisan20
+		</author>
+		<code language="Delphi">
+<![CDATA[
+interface
+
+uses
+  System.SysUtils;
+
+type
+  TClasse = class(TInterfacedObject, iInterface)
+  private
+    [weak]
+    FParent: iParent;
+  public
+    constructor Create(Parent: iParent);
+    destructor Destroy; override;
+    class function New(Parent: iParent): iInterface;
+    function &End : iParent;
+  end;
+
+implementation
+
+function TClasse.&End: iParent;
+begin
+  Result := FParent;
+end;
+
+constructor TClasse.Create(Parent: iParent);
+begin
+  FParent := Parent;
+end;
+
+destructor TClasse.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TClasse.New(Parent: iParent): iInterface;
+begin
+  Result := Self.Create(Parent);
+end;
+
+end.
+]]>
+		</code>
+	</template>
+</codetemplate>

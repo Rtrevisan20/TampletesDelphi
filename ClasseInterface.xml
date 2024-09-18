@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+	<template name="clInterface" invoke="manual">
+		<description>
+		 Tamplate para criação de interface
+		</description>
+		<author>
+		RTrevisan20
+		</author>
+		<code language="Delphi"><![CDATA[
+interface
+
+uses
+	System.SysUtils;
+
+type
+  TminhaClasse = class (TInterfacedObject, iMinhaClasse)
+   private
+   public	
+	   constructor Create;
+     destructor Destroy; override;
+     class function New : iMinhaClasse;
+  end;
+
+implementation
+
+constructor TminhaClasse.Create;
+begin
+
+end;
+
+destructor TminhaClasse.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TminhaClasse.New: iMinhaClasse;
+begin
+ Result := Self.Create;
+end;
+
+end.]]>
+		</code>
+	</template>
+</codetemplate>
