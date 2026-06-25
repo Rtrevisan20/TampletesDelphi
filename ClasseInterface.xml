@@ -16,11 +16,11 @@ uses
 
 type
   TminhaClasse = class (TInterfacedObject, iMinhaClasse)
-   private
-   public	
-	   constructor Create;
-     destructor Destroy; override;
-     class function New : iMinhaClasse;
+  private
+  public	
+	constructor Create;
+    destructor Destroy; override;
+    class function New : iMinhaClasse;
   end;
 
 implementation

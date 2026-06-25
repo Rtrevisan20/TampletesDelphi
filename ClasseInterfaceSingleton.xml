@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<codetemplate	xmlns="http://schemas.borland.com/Delphi/2005/codetemplates"
+				version="1.0.0">
+<template name="clIntSingleton" invoke="manual">
+<description>
+ Tamplate para criação de interface usando o modo singleton
+</description>
+<author>
+	RTrevisan20
+</author>
+	<code language="Delphi"><![CDATA[
+interface
+
+uses
+	System.SysUtils;
+
+type
+  TminhaClasse = class (TInterfacedObject, iMinhaClasse)
+  private
+	constructor Create;
+	class var FInstance  : iMinhaClasse;
+	class function New : iMinhaClasse; static;
+  public	
+    class property GetInstance : iMinhaClasse read New;
+	destructor Destroy; override;
+  end;
+
+implementation
+
+constructor TminhaClasse.Create;
+begin
+
+end;
+
+destructor TminhaClasse.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TminhaClasse.New: iMinhaClasse;
+begin
+  if Not Assigned(FInstance) then
+    FInstance := TminhaClasse.Create;
+
+  Result := FInstance;
+end;
+
+end.]]>
+	</code>
+</template>
+</codetemplate>
